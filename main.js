@@ -27,9 +27,6 @@ update();
 setInterval(update, 1000);
 
 ///////////////////////////////////////////////////////////
-const TOKEN = "8083808487:AAHjc03EiXUOL8Z372s8ohu7JTr-gyLTYqw";
-const CHAT_ID = "-1002330677694";
-const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
 document
   .getElementById("tg")
