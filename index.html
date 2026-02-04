@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              beige: "#faf8f5",
+              "dark-green": "rgba(17, 40, 13, 0.73)",
+            },
+            fontFamily: {
+              playfair: ['"Playfair Display"', "serif"],
+              vibes: ['"Monsieur La Doulaise"', "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Sarah & James</title>
+    <link rel="icon" href="img/icon-wed.png" type="image/x-icon" />
+
+    <style>
+      /* Local font */
+      @font-face {
+        font-family: "Monsieur La Doulaise";
+        src: url("fonts/MonsieurLaDoulaise-Regular.woff2") format("woff2"),
+          url("fonts/MonsieurLaDoulaise-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* Custom styles that can't be easily done with Tailwind */
+
+      /* Base styles for mobile (< 613px) - flexbox layout */
+      .photo-main-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+      .date-text {
+        font-size: 8vw;
+        line-height: 110%;
+        margin: 0;
+        font-weight: 100;
+      }
+      .names-text {
+        font-size: 5vw;
+        line-height: 110%;
+      }
+      .photo-main-img {
+        width: 35%;
+        order: 2;
+      }
+      .main-text-date {
+        position: static;
+        order: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .main-text-names {
+        position: static;
+        order: 3;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Small screens (380px - 612px) */
+      @media (min-width: 380px) {
+        .date-text {
+          font-size: 9vw;
+        }
+        .names-text {
+          font-size: 5.5vw;
+        }
+        .photo-main-img {
+          width: 35%;
+        }
+      }
+
+      /* Medium screens (613px+) */
+      @media (min-width: 613px) {
+        /* .photo-main-container {
+          padding: 2rem 0;
+        } */
+        .date-text {
+          font-size: 10vw;
+          line-height: 100%;
+        }
+        .names-text {
+          font-size: 5vw;
+        }
+        .photo-main-img {
+          width: 38%;
+        }
+      }
+
+      /* Large screens (1024px+) */
+      @media (min-width: 1024px) {
+        /* .photo-main-container {
+          padding: 3rem 0;
+        } */
+        .date-text {
+          font-size: 8vw;
+        }
+        .names-text {
+          font-size: 4vw;
+        }
+        .photo-main-img {
+          width: 35%;
+        }
+      }
+
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="m-0 p-0 box-border overflow-x-hidden bg-beige lg:px-32">
+    <!-- Hero Section -->
+    <section class="photo-main-container md:bg-beige overflow-visible">
+      <div class="main-text-date text-center text-dark-green">
+        <p class="date-text font-playfair font-thin">07</p>
+        <p class="date-text font-playfair font-thin">14</p>
+        <p class="date-text font-playfair font-thin">26</p>
+      </div>
+      <img src="img/free6.avif" alt="main-img" class="photo-main-img" />
+      <div class="main-text-names text-center text-dark-green">
+        <h2 class="names-text font-vibes font-light">Sarah</h2>
+        <h2 class="names-text font-vibes font-light">&</h2>
+        <h2 class="names-text font-vibes font-light">James</h2>
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <main class="">
+      <h2
+        class="font-vibes font-light text-4xl sm:text-5xl text-center py-6 sm:py-8"
+      >
+        Dear Guests!
+      </h2>
+      <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 pb-4">
+        Very soon, you will witness the creation of a new family!
+      </p>
+      <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 pb-4">
+        This year, one day will be especially meaningful to us, and we want to
+        spend it surrounded by our family and friends. We are delighted to
+        invite you to share in this momentous celebration — our wedding!
+      </p>
+      <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 pb-4">
+        Your presence would mean the world to us as we begin this new chapter of
+        our lives together. We look forward to celebrating love, laughter, and
+        happiness with those who mean the most to us.
+      </p>
+    </main>
+
+    <!-- Countdown Section -->
+    <section class="bg-dark-green">
+      <div class="py-8 bg-beige">
+        <h3
+          class="font-playfair tracking-wider sm:tracking-widest px-4 sm:px-8 text-base sm:text-xl uppercase text-center bg-dark-green text-white h-16 sm:h-20 flex items-center justify-center"
+        >
+          Time Until the Celebration:
+        </h3>
+        <div id="countdown" class="flex justify-center my-3">
+          <div class="text-center mx-2 sm:mx-4">
+            <p id="days" class="font-playfair text-xl sm:text-2xl">00</p>
+            <small class="font-playfair text-xs sm:text-sm">days</small>
+          </div>
+          <div class="text-center mx-2 sm:mx-4">
+            <p id="hours" class="font-playfair text-xl sm:text-2xl">00</p>
+            <small class="font-playfair text-xs sm:text-sm">hours</small>
+          </div>
+          <div class="text-center mx-2 sm:mx-4">
+            <p id="min" class="font-playfair text-xl sm:text-2xl">00</p>
+            <small class="font-playfair text-xs sm:text-sm">minutes</small>
+          </div>
+          <div class="text-center mx-2 sm:mx-4">
+            <p id="sec" class="font-playfair text-xl sm:text-2xl">00</p>
+            <small class="font-playfair text-xs sm:text-sm">seconds</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="bg-beige lg:flex lg:flex-row lg:items-center">
+      <img
+        src="img/free7.avif"
+        alt="house"
+        loading="lazy"
+        class="w-full h-full lg:w-[60%]"
+      />
+      <div class="px-2">
+        <h2
+          class="font-vibes font-light text-4xl sm:text-5xl text-center py-6 sm:py-8"
+        >
+          Location and Time
+        </h2>
+        <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 pb-4">
+          We will be waiting for you at the Garden Terrace, <br />Palo Alto
+        </p>
+        <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 pb-4">
+          Address: 123 Willow Lane, Palo Alto, California
+        </p>
+        <h3 class="flex justify-center pb-3 text-xl sm:text-2xl font-playfair">
+          <span class="font-playfair text-xl sm:text-2xl">July,</span>
+          <span id="july" class="lowercase px-2 sm:px-4 translate-y-0.5"
+            >14</span
+          >
+          <span class="font-playfair text-xl sm:text-2xl">2026</span>
+        </h3>
+      </div>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section class="bg-beige">
+      <h2
+        class="font-vibes font-light text-4xl sm:text-5xl text-center py-6 sm:py-8"
+      >
+        Dress Code
+      </h2>
+      <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 pb-4 text-center">
+        We would be delighted if you choose pastel colors for your attire
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 py-4 px-4">
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(250,235,215,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(198,184,167,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(75,72,67,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(17,16,15,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(94,76,54,0.75)]"
+        ></div>
+      </div>
+      <p class="font-playfair text-lg sm:text-xl px-4 sm:px-8 text-center">
+        or bright but muted and soft &mdash; feel free to pick what suits you
+        best!
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 py-4 px-4">
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(38,78,43,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(71,103,75,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(255,230,55,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(169,77,107,0.75)]"
+        ></div>
+        <div
+          class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border border-black/40 bg-[rgba(106,35,58,0.75)]"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section
+      class="bg-beige grid grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-4 p-4 sm:p-6"
+    >
+      <figure class="aspect-[3/4]">
+        <img
+          src="img/free17.avif"
+          alt="image 1"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
+      </figure>
+      <figure class="aspect-[3/4]">
+        <img
+          src="img/free22.avif"
+          alt="image 2"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
+      </figure>
+      <figure class="aspect-[3/4]">
+        <img
+          src="img/free16.avif"
+          alt="image 3"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
+      </figure>
+      <figure class="aspect-[3/4]">
+        <img
+          src="img/free14.avif"
+          alt="image 4"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
+      </figure>
+      <figure class="aspect-[3/4]">
+        <img
+          src="img/free19.avif"
+          alt="image 5"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
+      </figure>
+      <figure class="aspect-[3/4] lg:hidden">
+        <img
+          src="img/free20.avif"
+          alt="image 6"
+          loading="lazy"
+          class="w-full h-full object-cover rounded"
+        />
+      </figure>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="bg-beige w-full py-6 sm:py-8 px-4 sm:px-[9%] lg:px-8">
+      <h2 class="font-vibes font-light text-3xl sm:text-4xl text-center mb-4">
+        Please confirm your attendance
+      </h2>
+      <p class="font-playfair text-sm sm:text-base text-center mb-6 sm:mb-8">
+        &mdash; if you are not invited alone, please fill out the form for each
+        guest &mdash;
+      </p>
+
+      <div class="flex flex-col lg:flex-row items-start gap-8">
+        <!-- Images on the left -->
+        <div class="w-full lg:w-1/2 flex flex-col gap-4">
+          <img
+            src="img/free9.avif"
+            alt="form-picture"
+            loading="lazy"
+            class="w-full object-cover"
+          />
+          <img
+            src="img/free25.avif"
+            alt="form-picture"
+            loading="lazy"
+            class="w-full object-cover hidden lg:block"
+          />
+        </div>
+
+        <!-- Form on the right -->
+        <form id="tg" class="w-full lg:w-1/2">
+          <span class="text-dark-green font-playfair text-xl sm:text-2xl"
+            >Full name</span
+          >
+          <input
+            type="text"
+            name="name"
+            class="w-full my-3 sm:my-4 rounded-lg p-2 sm:p-3 bg-white/90 font-playfair text-base"
+            autocomplete="off"
+            placeholder="Your name"
+          />
+
+          <span class="text-dark-green font-playfair text-xl sm:text-2xl"
+            >Phone number</span
+          >
+          <input
+            type="tel"
+            name="phone"
+            class="w-full my-3 sm:my-4 rounded-lg p-2 sm:p-3 bg-white/90 font-playfair text-base"
+            autocomplete="off"
+            placeholder="Your phone"
+          />
+
+          <span class="text-dark-green font-playfair text-xl sm:text-2xl"
+            >Drink preference</span
+          >
+          <select
+            name="drinks"
+            class="w-full my-3 sm:my-4 rounded-lg p-2 sm:p-3 bg-white/90 font-playfair cursor-pointer text-base"
+          >
+            <option value="" disabled selected>Select</option>
+            <option value="Light alcoholic drinks">Beer & wine</option>
+            <option value="Hard liquor">Hard liquor</option>
+            <option value="Non-alcoholic drinks">Soft drinks</option>
+            <option value="I don't mind">I don't mind</option>
+          </select>
+
+          <span class="text-dark-green font-playfair text-xl sm:text-2xl"
+            >Transfer from San Francisco</span
+          >
+          <div class="my-3 sm:my-4 flex flex-col">
+            <div class="mb-2">
+              <input
+                type="radio"
+                name="transfer"
+                id="yes"
+                value="needed"
+                class="w-3 h-3 cursor-pointer accent-dark-green"
+              />
+              <label
+                for="yes"
+                class="ml-1 font-playfair text-lg sm:text-xl cursor-pointer"
+                >needed</label
+              >
+            </div>
+            <div class="mb-2">
+              <input
+                type="radio"
+                name="transfer"
+                id="no"
+                value="not needed"
+                class="w-3 h-3 cursor-pointer accent-dark-green"
+              />
+              <label
+                for="no"
+                class="ml-1 font-playfair text-lg sm:text-xl cursor-pointer"
+                >not needed</label
+              >
+            </div>
+            <div class="mb-2">
+              <input
+                type="radio"
+                name="transfer"
+                id="dontknow"
+                value="will let you know later"
+                class="w-3 h-3 cursor-pointer accent-dark-green"
+              />
+              <label
+                for="dontknow"
+                class="ml-1 font-playfair text-lg sm:text-xl cursor-pointer"
+                >will let you know later</label
+              >
+            </div>
+          </div>
+
+          <div id="notification" class="hidden text-center mb-8">
+            <p class="py-4 bg-amber-600 rounded-xl text-beige font-playfair">
+              Thank you! Your confirmation has been sent!
+            </p>
+          </div>
+
+          <input
+            type="submit"
+            name="send"
+            class="py-2 sm:py-3 px-8 sm:px-10 rounded-3xl shadow-lg font-bold text-base sm:text-lg cursor-pointer transition-all duration-300 text-black/85 font-playfair border-2 border-dark-green hover:bg-dark-green hover:text-beige"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </section>
+
+    <!-- Telegram Section -->
+    <section class="bg-dark-green mb-8">
+      <p
+        class="text-white p-4 sm:p-8 leading-7 sm:leading-8 font-playfair text-lg sm:text-xl text-center"
+      >
+        For further coordination and to stay in touch, please join this
+        <a
+          href="https://www.linkedin.com/in/alena-vinogradova-frntend/"
+          class="underline italic text-white"
+        >
+          group</a
+        >
+        <img
+          class="w-5 sm:w-6 inline"
+          src="img/telegram.svg"
+          alt="tg"
+          loading="lazy"
+        />
+      </p>
+    </section>
+
+    <!-- See You Section -->
+    <section class="h-[22rem] sm:h-[28rem] relative mb-8">
+      <div
+        class="opacity-80 h-[22rem] sm:h-[28rem] bg-[url('img/see-you/pampas-2.jpeg')] bg-cover bg-center blur-[0.18rem]"
+      ></div>
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-dark-green px-4"
+      >
+        <h2
+          class="font-vibes font-light text-4xl sm:text-5xl mb-4 sm:mb-6 text-center"
+        >
+          See You There!
+        </h2>
+        <p class="font-playfair text-lg sm:text-xl mb-4 sm:mb-6 text-center">
+          With love <br />Sarah and James
+        </p>
+        <img
+          src="img/heart-glasses-svgrepo-com.svg"
+          alt="hearts"
+          loading="lazy"
+          class="w-16 sm:w-20"
+        />
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
